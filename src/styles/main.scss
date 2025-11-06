@@ -1,3 +1,190 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #fff;
+  background-color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  animation: fadeIn 1.5s ease;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  animation: slideUp 1.5s ease;
+}
+
+.logo {
+  width: 250px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #f5f5f5;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #00b894;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #00e0b8;
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  border: 2px solid #00b894;
+  color: #00b894;
+}
+
+.btn.secondary:hover {
+  background: #00b894;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.contacts {
+  background: #111;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contacts h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  border-radius: 50%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.social:hover {
+  transform: scale(1.15);
+}
+
+.fb { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg'); background-color: #1877f2; }
+.ig { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); background-color: #e4405f; }
+.tg { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg'); background-color: #0088cc; }
+.vb { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg'); background-color: #7360f2; }
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* 🌐 Адаптивність */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn {
+    width: 80%;
+    max-width: 280px;
+  }
+  .logo {
+    width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  .contacts h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Анімації */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
